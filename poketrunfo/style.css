@@ -1,0 +1,27 @@
+p{
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #333;
+    color: #fff;
+}
+
+.card {
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    padding:  1em;
+    margin: 1em;
+}
+
+.card__attributes p{
+    text-align: justify;
+}
+
+.card__attributes p:hover{
+    background-color: #666;
+    border-radius: 4px;
+}
