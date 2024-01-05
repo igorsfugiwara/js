@@ -9,9 +9,31 @@
 </head>
 
 <body>
-    <div id="player1-container"></div>
-    <div id="player2-container"></div>
+    <nav class="controls">
+        <buttton class="startGame">Começar</buttton>
+        <buttton class="shuffleCards">Embaralhar</buttton>
+        <buttton class="restartGame">Recomeçar</buttton>
+    </nav>
+    <div class="game">
+        <div id="player1-container">
+            <p>Jogador 1: <span id="player1CardCount">0</span> cartas</p>
+    
+        </div>
+        <div id="player2-container">
+            <p>Jogador 2: <span id="player2CardCount">0</span> cartas</p>
+        </div>
+    </div>
 
+    <!-- Modal de Vitória -->
+    <div id="victoryModal" class="modal">
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <h2>Parabéns! Você venceu!</h2>
+            <p>Continue jogando ou reinicie o jogo.</p>
+        </div>
+    </div>
+
+    <script src="controls.js"></script>
     <script src="script.js"></script>
     <script src="hands.js"></script>
 </body>
