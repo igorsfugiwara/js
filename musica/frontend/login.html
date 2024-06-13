@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autenticação de Usuário</title>
+  <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" id="password" minlength="6" required>
+      </div>
+      <button type="submit" id="loginBtn">Entrar</button>
+      <div id="loading" class="hidden">Carregando...</div>
+    </form>
+    <button id="registerBtn">Registrar</button>
+  </div>
+  
+  <script src="/frontend/script.js"></script>
+</body>
+</html>

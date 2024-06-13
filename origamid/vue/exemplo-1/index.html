@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1</title>
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+<!-- EXEMPLO BÁSICO -->
+    <div id="app">
+        {{nome}} {{sobrenome}} {{torcedor}}, CLT {{profissao.clt}} de cargo {{profissao.cargo}} na firma
+        {{profissao.empresa}}
+    </div>
+
+
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                nome: "Mano Alax",
+                sobrenome: "100%",
+                torcedor: "Palmeirense",
+                profissao: {
+                    clt: "sim",
+                    cargo: "juninho",
+                    empresa: "UOL"
+                }
+            }
+        })
+
+        vm.profissao.cargo = "pleno";
+    </script>
+
+
+
+    <!-- compra JS Vanilla-->
+    <div id="compra">
+        <p class="produto">Camiseta</p>
+        <p>Preço <span class="preco">49</span></p>
+        <button class="adicionar">ADICIONAR</button>
+        <button class="remover">REMOVER</button>
+        <p>Total de produtos <span class="total">0</span>
+            <p>Preço total <span class="precoTotal"></span></p>
+    </div>
+
+    <script>
+        const compra = document.querySelector('#compra');
+        const preco = document.querySelector('.preco');
+        const adicionar = document.querySelector(".adicionar")
+        const remover = document.querySelector(".remover")
+        const totalProdutos = document.querySelector(".total")
+        const precoTotal = document.querySelector(".precoTotal")
+
+        const dados = {
+            preco: 51,
+            totalProdutos: 0
+        }
+
+        preco.innerText = dados.preco;
+        totalProdutos.innerText = dados.totalProdutos;
+        precoTotal.innerText = dados.preco * dados.totalProdutos;
+
+        function update() {
+            totalProdutos.innerHTML = dados.totalProdutos;
+            precoTotal.innerHTML = dados.preco * dados.totalProdutos;
+        }
+
+        function incrementar() {
+            dados.totalProdutos++;
+            update();
+        }
+
+        function diminuir() {
+            dados.totalProdutos--;
+            update();
+        }
+
+        adicionar.addEventListener('click', incrementar)
+        remover.addEventListener('click', diminuir)
+    </script>
+
+
+
+    <!-- Compra com VUE.JS -->
+    <div id="elemento">
+        <p>Bermuda</p>
+        <p>Preço <span>{{preco}}</span></p>
+        <button @click="totalProdutos++">ADICIONAR</button>
+        <button @click="totalProdutos--">REMOVER</button>
+        <p>Total de produtos <span>{{totalProdutos}}</span></p>
+        <p>Preço total <span>{{totalProdutos * preco}}</span></p>
+    </div>
+
+    <script>
+        const vueModel = new Vue({
+            el: '#elemento',
+            data: {
+                preco: 51,
+                totalProdutos: 0
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
